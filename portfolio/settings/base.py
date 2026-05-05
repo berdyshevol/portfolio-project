@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     "core",
     "projects",
     "skills",
+    "resume",
 ]
 
 MIDDLEWARE = [
