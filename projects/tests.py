@@ -98,7 +98,7 @@ class InitialProjectsFixtureTest(TestCase):
         titles = set(Project.objects.values_list("title", flat=True))
         required = {
             "Chatbot to Agent Progression",
-            "n8n Agent Workflow",
+            "n8n Multi-Agent Booking Pipeline",
             "Handyman AI Assistant",
             "Google AI Studio Media",
             "Machine Learning Exercises (scikit-learn)",
