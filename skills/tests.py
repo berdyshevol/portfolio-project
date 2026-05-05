@@ -26,3 +26,22 @@ from django.urls import reverse
 class SkillsUrlTest(TestCase):
     def test_list_url_resolves(self):
         self.assertEqual(reverse("skills:list"), "/skills/")
+
+
+class SkillsListViewTest(TestCase):
+    def test_returns_200_and_template(self):
+        response = self.client.get(reverse("skills:list"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "skills/list.html")
+
+    def test_groups_by_category(self):
+        Skill.objects.create(name="Python", category="lang", order=1)
+        Skill.objects.create(name="JavaScript", category="lang", order=2)
+        Skill.objects.create(name="React", category="frontend", order=1)
+        response = self.client.get(reverse("skills:list"))
+        groups = response.context["grouped_skills"]
+        labels = [g["label"] for g in groups]
+        self.assertIn("Programming Languages", labels)
+        self.assertIn("Frontend", labels)
+        lang_group = next(g for g in groups if g["label"] == "Programming Languages")
+        self.assertEqual([s.name for s in lang_group["skills"]], ["Python", "JavaScript"])

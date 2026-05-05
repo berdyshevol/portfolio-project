@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Skills — Oleg Berdyshev{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold">Skills</h1>
+<p class="mt-2 text-slate-600 dark:text-slate-300">Languages, frameworks, and tools I've shipped with.</p>
+
+<div class="mt-10 space-y-10">
+  {% for group in grouped_skills %}
+  <section>
+    <h2 class="text-xl font-semibold">{{ group.label }}</h2>
+    <div class="mt-4 flex flex-wrap gap-2">
+      {% for skill in group.skills %}
+      <span class="rounded-full border border-slate-300 px-3 py-1 text-sm dark:border-slate-700">
+        {{ skill.name }}
+      </span>
+      {% endfor %}
+    </div>
+  </section>
+  {% empty %}
+  <p class="text-slate-500">No skills loaded yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}
