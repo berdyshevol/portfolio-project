@@ -39,3 +39,10 @@ class Project(models.Model):
 
     def tool_chips(self):
         return [t.strip() for t in self.tools_used.split(",") if t.strip()]
+
+    def screenshots(self):
+        from django.conf import settings
+        folder = settings.BASE_DIR / "static" / "img" / "projects" / self.slug
+        if not folder.is_dir():
+            return []
+        return [f"img/projects/{self.slug}/{p.name}" for p in sorted(folder.glob("*.png"))]

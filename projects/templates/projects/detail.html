@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}{{ project.title }} — Oleg Berdyshev{% endblock %}
 
 {% block content %}
@@ -9,12 +10,23 @@
   <h1 class="mt-2 text-3xl font-bold">{{ project.title }}</h1>
   <p class="mt-2 text-lg text-slate-600 dark:text-slate-300">{{ project.summary }}</p>
 
-  {% if project.image %}
+  {% with shots=project.screenshots %}
+  {% if shots %}
+  <div class="mt-6 grid gap-3 sm:grid-cols-2">
+    {% for shot in shots %}
+    <a href="{% static shot %}" target="_blank" class="block">
+      <img src="{% static shot %}" alt="{{ project.title }} screenshot {{ forloop.counter }}"
+           class="w-full rounded-lg border border-slate-200 dark:border-slate-800">
+    </a>
+    {% endfor %}
+  </div>
+  {% elif project.image %}
   <img src="{{ project.image.url }}" alt="{{ project.title }} screenshot"
        class="mt-6 rounded-lg border border-slate-200 dark:border-slate-800">
   {% else %}
   <div class="mt-6 aspect-video w-full rounded-lg bg-gradient-to-br from-indigo-500 to-pink-500"></div>
   {% endif %}
+  {% endwith %}
 
   <div class="mt-8">
     <h2 class="text-xl font-semibold">Tools used</h2>
