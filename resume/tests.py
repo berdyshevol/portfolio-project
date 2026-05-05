@@ -81,3 +81,17 @@ class ResumeShowViewTest(TestCase):
         response = self.client.get(reverse("resume:show"))
         self.assertEqual(len(response.context["experiences"]), 1)
         self.assertEqual(len(response.context["education"]), 1)
+
+
+class InitialResumeFixtureTest(TestCase):
+    fixtures = ["initial_resume.json"]
+
+    def test_loads_two_experiences(self):
+        self.assertEqual(Experience.objects.count(), 2)
+
+    def test_loads_three_education_entries(self):
+        self.assertEqual(Education.objects.count(), 3)
+
+    def test_acuity_present_and_current(self):
+        acuity = Experience.objects.get(company="Acuity PPM")
+        self.assertTrue(acuity.is_current)

@@ -1,0 +1,66 @@
+[
+  {
+    "model": "resume.experience",
+    "pk": 1,
+    "fields": {
+      "company": "Acuity PPM",
+      "location": "Bellevue, WA (remote)",
+      "role": "Full-Stack Engineer",
+      "start_date": "2020-08-01",
+      "end_date": null,
+      "description": "US-based startup providing Lightweight Project Portfolio Management Software.",
+      "bullets": "- Boosted revenue by 15% by developing critical full-stack features from scratch — chart builder, notification system, permission management, and resource management.\n- Reduced bug frequency by 60% by leading the transition to TypeScript and implementing automated testing (Jest, Cypress, RSpec).\n- Accelerated grid development from 3 days to 1 hour by designing a reusable grid-builder solution.\n- Established and enforced clean architecture and modular design standards, improving code review turnaround by 40% and reducing technical debt across React and Rails codebases.\n- Mentored 3 junior engineers into mid-level roles; actively contributed to recruiting.\n- Conducted team-wide education on best practices for code readability, maintainability, and scalability.",
+      "order": 0
+    }
+  },
+  {
+    "model": "resume.experience",
+    "pk": 2,
+    "fields": {
+      "company": "The Development of Humanism in Ukraine",
+      "location": "Kyiv, Ukraine",
+      "role": "JavaScript Developer",
+      "start_date": "2018-08-01",
+      "end_date": "2020-08-01",
+      "description": "",
+      "bullets": "- Streamlined event management by creating an automated conference registration system integrated with Google services (Gmail, Forms, Calendar, Spreadsheets).\n- Built a lightweight desktop client to collect participant data.\n- Performed data analysis to support event planning and decision-making.",
+      "order": 1
+    }
+  },
+  {
+    "model": "resume.education",
+    "pk": 1,
+    "fields": {
+      "institution": "Baylor University",
+      "degree": "Master of Science in Information Systems",
+      "location": "Waco, TX",
+      "start_date": "2024-08-01",
+      "end_date": "2026-07-01",
+      "order": 0
+    }
+  },
+  {
+    "model": "resume.education",
+    "pk": 2,
+    "fields": {
+      "institution": "Unit Factory",
+      "degree": "Computer Science",
+      "location": "",
+      "start_date": "2019-01-01",
+      "end_date": "2020-12-31",
+      "order": 1
+    }
+  },
+  {
+    "model": "resume.education",
+    "pk": 3,
+    "fields": {
+      "institution": "Dnipro National University",
+      "degree": "Master's Degree in Mathematics",
+      "location": "Dnipro, Ukraine",
+      "start_date": "1995-09-01",
+      "end_date": "2000-07-01",
+      "order": 2
+    }
+  }
+]
