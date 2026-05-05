@@ -53,3 +53,11 @@ class EducationModelTest(TestCase):
             order=0,
         )
         self.assertEqual(str(edu), "MSIS at Baylor")
+
+
+from django.urls import reverse
+
+
+class ResumeUrlTest(TestCase):
+    def test_show_url_resolves(self):
+        self.assertEqual(reverse("resume:show"), "/resume/")

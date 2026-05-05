@@ -30,3 +30,17 @@ class ContactMessageModelTest(TestCase):
             name="B", email="b@x.com", subject="2", body="."
         )
         self.assertEqual(list(ContactMessage.objects.all()), [second, first])
+
+
+from django.urls import reverse
+
+
+class CoreUrlTest(TestCase):
+    def test_home_url_resolves(self):
+        self.assertEqual(reverse("core:home"), "/")
+
+    def test_about_url_resolves(self):
+        self.assertEqual(reverse("core:about"), "/about/")
+
+    def test_contact_url_resolves(self):
+        self.assertEqual(reverse("core:contact"), "/contact/")

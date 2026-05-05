@@ -33,3 +33,15 @@ class ProjectModelTest(TestCase):
         a = self._make(title="A", slug="a", order=1)
         c = self._make(title="C", slug="c", order=1)
         self.assertEqual(list(Project.objects.all()), [a, c, b])
+
+
+from django.urls import reverse
+
+
+class ProjectsUrlTest(TestCase):
+    def test_list_url_resolves(self):
+        self.assertEqual(reverse("projects:list"), "/projects/")
+
+    def test_detail_url_resolves(self):
+        url = reverse("projects:detail", args=["chatbot"])
+        self.assertEqual(url, "/projects/chatbot/")

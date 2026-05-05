@@ -18,3 +18,11 @@ class SkillModelTest(TestCase):
         Skill.objects.create(name="JavaScript", category="lang", order=1)
         names = list(Skill.objects.values_list("name", flat=True))
         self.assertEqual(names, ["React", "JavaScript", "Python"])
+
+
+from django.urls import reverse
+
+
+class SkillsUrlTest(TestCase):
+    def test_list_url_resolves(self):
+        self.assertEqual(reverse("skills:list"), "/skills/")
