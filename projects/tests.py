@@ -91,8 +91,8 @@ class ProjectDetailViewTest(TestCase):
 class InitialProjectsFixtureTest(TestCase):
     fixtures = ["initial_projects.json"]
 
-    def test_loads_seven_projects(self):
-        self.assertEqual(Project.objects.count(), 7)
+    def test_loads_eight_projects(self):
+        self.assertEqual(Project.objects.count(), 8)
 
     def test_required_titles_present(self):
         titles = set(Project.objects.values_list("title", flat=True))
@@ -104,5 +104,6 @@ class InitialProjectsFixtureTest(TestCase):
             "Machine Learning Exercises (scikit-learn)",
             "Campus SkillSwap 1",
             "Campus SkillSwap 2",
+            "Learning Log",
         }
         self.assertEqual(titles, required)

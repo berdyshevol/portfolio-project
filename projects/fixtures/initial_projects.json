@@ -152,5 +152,27 @@
       "is_featured": true,
       "created_at": "2026-04-01T12:00:00Z"
     }
+  },
+  {
+    "model": "projects.project",
+    "pk": 8,
+    "fields": {
+      "title": "Learning Log",
+      "slug": "learning-log",
+      "summary": "Django journal app for tracking topics you're learning about — register an account, create topics, and add dated entries; built while working through Python Crash Course chapters 18–20.",
+      "business_problem": "Self-directed learners need a durable, searchable place to record what they study — not scattered notes across apps. The exercise was also a forcing function to learn Django auth and ownership patterns end-to-end.",
+      "tools_used": "Python, Django, SQLite, Bootstrap 5, django-bootstrap5",
+      "key_features": "- User registration, login, and logout\n- Per-user topic ownership — users only see and edit their own topics\n- Add and edit dated entries belonging to a topic\n- Bootstrap 5 styling via django-bootstrap5\n- Two apps: learning_logs (topics + entries) and accounts (auth)",
+      "role_contribution": "Sole developer — built end-to-end while working through Python Crash Course chapters 18–20.",
+      "biggest_challenge": "Enforcing per-user ownership cleanly across views and forms without leaking another user's data — every queryset has to filter by request.user, and every view that mutates has to re-check ownership.",
+      "what_learned": "Django's auth system, the @login_required decorator, and how to weave ownership into both queryset filtering and view-level guards. Form/view boundaries map cleanly onto the request lifecycle once you see them.",
+      "image": "",
+      "github_url": "https://github.com/berdyshevol/DjangoProject-learning-log",
+      "demo_url": "",
+      "category": "web",
+      "order": 8,
+      "is_featured": false,
+      "created_at": "2026-04-01T12:00:00Z"
+    }
   }
 ]
