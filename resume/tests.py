@@ -61,3 +61,23 @@ from django.urls import reverse
 class ResumeUrlTest(TestCase):
     def test_show_url_resolves(self):
         self.assertEqual(reverse("resume:show"), "/resume/")
+
+
+class ResumeShowViewTest(TestCase):
+    def test_returns_200_and_template(self):
+        response = self.client.get(reverse("resume:show"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "resume/show.html")
+
+    def test_context_contains_experiences_and_education(self):
+        Experience.objects.create(
+            company="A", location=".", role="Engineer",
+            start_date=date(2024, 1, 1), description=".", bullets="-", order=0,
+        )
+        Education.objects.create(
+            institution="Baylor", degree="MSIS",
+            start_date=date(2024, 8, 1), end_date=date(2026, 7, 1), order=0,
+        )
+        response = self.client.get(reverse("resume:show"))
+        self.assertEqual(len(response.context["experiences"]), 1)
+        self.assertEqual(len(response.context["education"]), 1)
