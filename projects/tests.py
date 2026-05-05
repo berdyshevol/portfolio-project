@@ -91,17 +91,18 @@ class ProjectDetailViewTest(TestCase):
 class InitialProjectsFixtureTest(TestCase):
     fixtures = ["initial_projects.json"]
 
-    def test_loads_six_projects(self):
-        self.assertEqual(Project.objects.count(), 6)
+    def test_loads_seven_projects(self):
+        self.assertEqual(Project.objects.count(), 7)
 
-    def test_required_six_titles_present(self):
+    def test_required_titles_present(self):
         titles = set(Project.objects.values_list("title", flat=True))
         required = {
             "Chatbot",
             "n8n Agent Workflow",
-            "LangChain Agent",
+            "Handyman AI Assistant",
             "Google AI Studio Media",
             "Machine Learning (scikit-learn)",
-            "Campus SkillSwap",
+            "Campus SkillSwap 1",
+            "Campus SkillSwap 2",
         }
         self.assertEqual(titles, required)
