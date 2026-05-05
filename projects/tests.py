@@ -70,3 +70,19 @@ class ProjectsListViewTest(TestCase):
         response = self.client.get(reverse("projects:list"))
         titles = [p.title for p in response.context["projects"]]
         self.assertEqual(titles, ["A", "B"])
+
+
+class ProjectDetailViewTest(TestCase):
+    def test_detail_returns_200_when_found(self):
+        Project.objects.create(
+            title="Chatbot", slug="chatbot", summary="s", business_problem=".",
+            tools_used="Python, OpenAI", key_features="- F1",
+            role_contribution=".", biggest_challenge=".", what_learned=".",
+        )
+        response = self.client.get(reverse("projects:detail", args=["chatbot"]))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "projects/detail.html")
+
+    def test_detail_returns_404_when_missing(self):
+        response = self.client.get(reverse("projects:detail", args=["nope"]))
+        self.assertEqual(response.status_code, 404)
