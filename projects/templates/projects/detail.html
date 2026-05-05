@@ -12,7 +12,7 @@
 
   {% with shots=project.screenshots %}
   {% if shots %}
-  <div class="mt-6 grid gap-3 sm:grid-cols-2">
+  <div class="mt-6 grid gap-3 {% if shots|length > 1 %}sm:grid-cols-2{% endif %}">
     {% for shot in shots %}
     <a href="{% static shot %}" target="_blank" class="block">
       <img src="{% static shot %}" alt="{{ project.title }} screenshot {{ forloop.counter }}"
