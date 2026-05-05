@@ -1,0 +1,37 @@
+[
+  {"model": "skills.skill", "pk": 1,  "fields": {"name": "JavaScript", "category": "lang", "proficiency": 5, "order": 1}},
+  {"model": "skills.skill", "pk": 2,  "fields": {"name": "TypeScript", "category": "lang", "proficiency": 5, "order": 2}},
+  {"model": "skills.skill", "pk": 3,  "fields": {"name": "Python",     "category": "lang", "proficiency": 4, "order": 3}},
+  {"model": "skills.skill", "pk": 4,  "fields": {"name": "Ruby",       "category": "lang", "proficiency": 4, "order": 4}},
+  {"model": "skills.skill", "pk": 5,  "fields": {"name": "SQL",        "category": "lang", "proficiency": 4, "order": 5}},
+  {"model": "skills.skill", "pk": 6,  "fields": {"name": "Java",       "category": "lang", "proficiency": 3, "order": 6}},
+  {"model": "skills.skill", "pk": 7,  "fields": {"name": "C#",         "category": "lang", "proficiency": 3, "order": 7}},
+  {"model": "skills.skill", "pk": 8,  "fields": {"name": "C",          "category": "lang", "proficiency": 3, "order": 8}},
+  {"model": "skills.skill", "pk": 9,  "fields": {"name": "C++",        "category": "lang", "proficiency": 3, "order": 9}},
+
+  {"model": "skills.skill", "pk": 10, "fields": {"name": "React",         "category": "frontend", "proficiency": 5, "order": 1}},
+  {"model": "skills.skill", "pk": 11, "fields": {"name": "Redux",         "category": "frontend", "proficiency": 5, "order": 2}},
+  {"model": "skills.skill", "pk": 12, "fields": {"name": "React Query",   "category": "frontend", "proficiency": 5, "order": 3}},
+  {"model": "skills.skill", "pk": 13, "fields": {"name": "Tailwind CSS",  "category": "frontend", "proficiency": 4, "order": 4}},
+  {"model": "skills.skill", "pk": 14, "fields": {"name": "Material UI",   "category": "frontend", "proficiency": 4, "order": 5}},
+  {"model": "skills.skill", "pk": 15, "fields": {"name": "react-bootstrap", "category": "frontend", "proficiency": 4, "order": 6}},
+  {"model": "skills.skill", "pk": 16, "fields": {"name": "Apollo Client", "category": "frontend", "proficiency": 4, "order": 7}},
+  {"model": "skills.skill", "pk": 17, "fields": {"name": "Storybook",     "category": "frontend", "proficiency": 4, "order": 8}},
+  {"model": "skills.skill", "pk": 18, "fields": {"name": "Ag Grid",       "category": "frontend", "proficiency": 4, "order": 9}},
+
+  {"model": "skills.skill", "pk": 19, "fields": {"name": "Ruby on Rails", "category": "backend", "proficiency": 5, "order": 1}},
+  {"model": "skills.skill", "pk": 20, "fields": {"name": "Django",        "category": "backend", "proficiency": 4, "order": 2}},
+  {"model": "skills.skill", "pk": 21, "fields": {"name": "Node.js",       "category": "backend", "proficiency": 4, "order": 3}},
+
+  {"model": "skills.skill", "pk": 22, "fields": {"name": "Jest",     "category": "testing", "proficiency": 5, "order": 1}},
+  {"model": "skills.skill", "pk": 23, "fields": {"name": "Cypress",  "category": "testing", "proficiency": 4, "order": 2}},
+  {"model": "skills.skill", "pk": 24, "fields": {"name": "RSpec",    "category": "testing", "proficiency": 5, "order": 3}},
+  {"model": "skills.skill", "pk": 25, "fields": {"name": "unittest", "category": "testing", "proficiency": 4, "order": 4}},
+
+  {"model": "skills.skill", "pk": 26, "fields": {"name": "PostgreSQL", "category": "db", "proficiency": 4, "order": 1}},
+  {"model": "skills.skill", "pk": 27, "fields": {"name": "MySQL",      "category": "db", "proficiency": 4, "order": 2}},
+
+  {"model": "skills.skill", "pk": 28, "fields": {"name": "Heroku",       "category": "cloud", "proficiency": 4, "order": 1}},
+  {"model": "skills.skill", "pk": 29, "fields": {"name": "AWS",          "category": "cloud", "proficiency": 3, "order": 2}},
+  {"model": "skills.skill", "pk": 30, "fields": {"name": "Google Cloud", "category": "cloud", "proficiency": 3, "order": 3}}
+]

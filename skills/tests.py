@@ -45,3 +45,18 @@ class SkillsListViewTest(TestCase):
         self.assertIn("Frontend", labels)
         lang_group = next(g for g in groups if g["label"] == "Programming Languages")
         self.assertEqual([s.name for s in lang_group["skills"]], ["Python", "JavaScript"])
+
+
+class InitialSkillsFixtureTest(TestCase):
+    fixtures = ["initial_skills.json"]
+
+    def test_loads_skills(self):
+        self.assertGreater(Skill.objects.count(), 20)
+
+    def test_categories_present(self):
+        cats = set(Skill.objects.values_list("category", flat=True))
+        for c in ["lang", "frontend", "backend", "testing", "db", "cloud"]:
+            self.assertIn(c, cats)
+
+    def test_python_present_in_languages(self):
+        self.assertTrue(Skill.objects.filter(name="Python", category="lang").exists())
