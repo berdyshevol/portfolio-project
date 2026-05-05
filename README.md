@@ -1,6 +1,9 @@
 # AI Portfolio Site
 
-Django 5 portfolio site built for the Baylor MSIS final project. Showcases six AI/ML projects, a skills page, a structured resume, and a contact form. Tailwind for styling, dark mode, deployed on Render with Neon Postgres.
+Django 5 portfolio site built for the Baylor MSIS final project. Showcases seven AI/ML projects, a skills page, a structured resume, and a contact form. Tailwind for styling, dark mode, deployed on Render with Neon Postgres.
+
+**Live:** https://portfolio-8tfs.onrender.com/
+(Render free tier — first hit after ~15 min idle takes ~30s to wake)
 
 ## Local development
 
