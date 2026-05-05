@@ -19,7 +19,5 @@ services:
         sync: false
       - key: DATABASE_URL
         sync: false
-      - key: SEED_FIXTURES
-        value: "1"
       - key: NPM_BIN_PATH
         value: /usr/bin/npm
