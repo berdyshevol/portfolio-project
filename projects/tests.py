@@ -97,7 +97,7 @@ class InitialProjectsFixtureTest(TestCase):
     def test_required_titles_present(self):
         titles = set(Project.objects.values_list("title", flat=True))
         required = {
-            "Chatbot",
+            "Chatbot to Agent Progression",
             "n8n Agent Workflow",
             "Handyman AI Assistant",
             "Google AI Studio Media",
