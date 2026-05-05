@@ -1,0 +1,36 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Oleg Berdyshev — Portfolio{% endblock %}</title>
+  <meta name="description" content="{% block description %}Portfolio of Oleg Berdyshev — Senior Full-Stack Engineer and MSIS candidate at Baylor.{% endblock %}">
+  <script>
+    (function () {
+      var stored = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+  {% tailwind_css %}
+</head>
+<body class="h-full bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased">
+  {% include "_nav.html" %}
+  <main class="mx-auto max-w-6xl px-4 py-10">
+    {% block content %}{% endblock %}
+  </main>
+  {% include "_footer.html" %}
+  <script>
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('[data-theme-toggle]')) {
+        var root = document.documentElement;
+        root.classList.toggle('dark');
+        localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+      }
+    });
+  </script>
+</body>
+</html>
