@@ -36,3 +36,6 @@ class Project(models.Model):
     def get_absolute_url(self):
         from django.urls import reverse
         return reverse("projects:detail", args=[self.slug])
+
+    def tool_chips(self):
+        return [t.strip() for t in self.tools_used.split(",") if t.strip()]

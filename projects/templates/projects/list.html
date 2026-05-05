@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Projects — Oleg Berdyshev{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold">Projects</h1>
+<p class="mt-2 text-slate-600 dark:text-slate-300">A selection of work from the Baylor MSIS AI track and beyond.</p>
+
+<div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  {% for p in projects %}
+  <a href="{% url 'projects:detail' p.slug %}"
+     class="group block overflow-hidden rounded-lg border border-slate-200 hover:border-indigo-500 dark:border-slate-800">
+    {% if p.image %}
+    <img src="{{ p.image.url }}" alt="{{ p.title }}" class="aspect-video w-full object-cover">
+    {% else %}
+    <div class="aspect-video w-full bg-gradient-to-br from-indigo-500 to-pink-500"></div>
+    {% endif %}
+    <div class="p-5">
+      <span class="text-xs uppercase tracking-wider text-indigo-500">{{ p.get_category_display }}</span>
+      <h2 class="mt-2 text-lg font-semibold group-hover:text-indigo-500">{{ p.title }}</h2>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">{{ p.summary }}</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        {% for tool in p.tool_chips %}
+        <span class="rounded bg-slate-100 px-2 py-0.5 text-xs text-slate-700 dark:bg-slate-800 dark:text-slate-300">{{ tool }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </a>
+  {% empty %}
+  <p class="text-slate-500">No projects yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}
