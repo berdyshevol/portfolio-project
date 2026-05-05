@@ -124,7 +124,7 @@
       "what_learned": "Spec-first AI development produces tighter code than free-form prompting; the spec catches edge cases the code would have shipped silently.",
       "image": "",
       "github_url": "https://github.com/berdyshevol/campuse-skills-ssd-speckit",
-      "demo_url": "",
+      "demo_url": "https://berdyshevo.pythonanywhere.com/",
       "category": "web",
       "order": 6,
       "is_featured": false,
