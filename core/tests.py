@@ -82,3 +82,34 @@ class AboutViewTest(TestCase):
     def test_about_uses_correct_template(self):
         response = self.client.get(reverse("core:about"))
         self.assertTemplateUsed(response, "core/about.html")
+
+
+class ContactViewTest(TestCase):
+    def test_get_returns_form(self):
+        response = self.client.get(reverse("core:contact"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "core/contact.html")
+        self.assertContains(response, "<form")
+
+    def test_post_valid_creates_message_and_redirects(self):
+        response = self.client.post(reverse("core:contact"), {
+            "name": "Jane",
+            "email": "jane@example.com",
+            "subject": "Hello",
+            "body": "Just saying hi.",
+        })
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(ContactMessage.objects.count(), 1)
+        msg = ContactMessage.objects.first()
+        self.assertEqual(msg.name, "Jane")
+
+    def test_post_invalid_redisplays_form(self):
+        response = self.client.post(reverse("core:contact"), {
+            "name": "",
+            "email": "not-an-email",
+            "subject": "",
+            "body": "",
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(ContactMessage.objects.count(), 0)
+        self.assertContains(response, "This field is required")

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Contact — Oleg Berdyshev{% endblock %}
+
+{% block content %}
+<div class="max-w-xl">
+  <h1 class="text-3xl font-bold">Contact</h1>
+  <p class="mt-2 text-slate-600 dark:text-slate-300">Drop a note — I read every message.</p>
+
+  <form method="post" class="mt-8 space-y-4">
+    {% csrf_token %}
+    {% for field in form %}
+    <div>
+      <label for="{{ field.id_for_label }}" class="block text-sm font-medium">{{ field.label }}</label>
+      {{ field }}
+      {% if field.errors %}<p class="mt-1 text-sm text-red-500">{{ field.errors|join:", " }}</p>{% endif %}
+    </div>
+    {% endfor %}
+    <button type="submit" class="rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-500">Send</button>
+  </form>
+</div>
+{% endblock %}
