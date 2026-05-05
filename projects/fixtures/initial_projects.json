@@ -1,0 +1,134 @@
+[
+  {
+    "model": "projects.project",
+    "pk": 1,
+    "fields": {
+      "title": "Chatbot",
+      "slug": "chatbot",
+      "summary": "An AI chatbot demonstrating prompt engineering and conversational UX.",
+      "business_problem": "Users want fast, contextual answers without navigating manuals.",
+      "tools_used": "Python, OpenAI API, Streamlit",
+      "key_features": "- Streaming responses\n- Conversation memory\n- Topic guardrails",
+      "role_contribution": "Sole developer — design, prompts, deployment.",
+      "biggest_challenge": "Balancing helpfulness with refusal on out-of-scope queries.",
+      "what_learned": "Prompt structure dominates output quality; eval harnesses pay for themselves.",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "category": "ai",
+      "order": 1,
+      "is_featured": true,
+      "created_at": "2026-04-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "projects.project",
+    "pk": 2,
+    "fields": {
+      "title": "n8n Agent Workflow",
+      "slug": "n8n-agent-workflow",
+      "summary": "Low-code agent that orchestrates web searches, summarization, and email delivery.",
+      "business_problem": "Manual research and reporting consumed hours per week.",
+      "tools_used": "n8n, OpenAI, Gmail API",
+      "key_features": "- Scheduled trigger\n- LLM summarization node\n- Email delivery",
+      "role_contribution": "Built the full workflow and integrations.",
+      "biggest_challenge": "Reliability under rate limits and partial failures.",
+      "what_learned": "Workflow tools shine for glue code; isolate retries per step.",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "category": "workflow",
+      "order": 2,
+      "is_featured": true,
+      "created_at": "2026-04-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "projects.project",
+    "pk": 3,
+    "fields": {
+      "title": "LangChain Agent",
+      "slug": "langchain-agent",
+      "summary": "ReAct-style agent with tool use and persistent memory.",
+      "business_problem": "Single-prompt LLM calls couldn't reason across tools.",
+      "tools_used": "Python, LangChain, OpenAI, Chroma",
+      "key_features": "- Tool routing\n- Vector memory\n- Trace logging",
+      "role_contribution": "Designed agent architecture and tool interfaces.",
+      "biggest_challenge": "Containing the agent loop when tools returned ambiguous results.",
+      "what_learned": "Constrain the action space; observability is non-negotiable.",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "category": "ai",
+      "order": 3,
+      "is_featured": true,
+      "created_at": "2026-04-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "projects.project",
+    "pk": 4,
+    "fields": {
+      "title": "Google AI Studio Media",
+      "slug": "google-ai-studio-media",
+      "summary": "Generative media exploration using Google AI Studio for image and audio.",
+      "business_problem": "Marketing teams need rapid creative iteration on assets.",
+      "tools_used": "Google AI Studio, Gemini, Python",
+      "key_features": "- Image generation\n- Audio synthesis\n- Prompt library",
+      "role_contribution": "Drove the creative experiments and integration code.",
+      "biggest_challenge": "Reproducibility across model revisions.",
+      "what_learned": "Pin model versions; capture seeds.",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "category": "media",
+      "order": 4,
+      "is_featured": false,
+      "created_at": "2026-04-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "projects.project",
+    "pk": 5,
+    "fields": {
+      "title": "Machine Learning (scikit-learn)",
+      "slug": "machine-learning-scikit-learn",
+      "summary": "Classification pipeline with feature engineering and cross-validation.",
+      "business_problem": "Predict outcomes from a structured tabular dataset.",
+      "tools_used": "Python, scikit-learn, pandas, matplotlib",
+      "key_features": "- Pipeline + ColumnTransformer\n- Cross-validation\n- Confusion matrix",
+      "role_contribution": "Owned data prep, modeling, and evaluation.",
+      "biggest_challenge": "Class imbalance and leakage.",
+      "what_learned": "Pipelines prevent leakage; baselines first, fancy models later.",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "category": "ml",
+      "order": 5,
+      "is_featured": false,
+      "created_at": "2026-04-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "projects.project",
+    "pk": 6,
+    "fields": {
+      "title": "Campus SkillSwap",
+      "slug": "campus-skillswap",
+      "summary": "Django app where students trade skill-sharing sessions.",
+      "business_problem": "Students wanted peer learning without paid platforms.",
+      "tools_used": "Django, Bootstrap, SQLite, Django auth",
+      "key_features": "- Auth\n- Skill listings\n- Session matching",
+      "role_contribution": "Sole developer; full Django stack.",
+      "biggest_challenge": "Modeling matchmaking without overengineering.",
+      "what_learned": "Start with a CRUD spine; layer matching on top.",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "category": "web",
+      "order": 6,
+      "is_featured": false,
+      "created_at": "2026-04-01T12:00:00Z"
+    }
+  }
+]

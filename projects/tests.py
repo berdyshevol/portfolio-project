@@ -86,3 +86,22 @@ class ProjectDetailViewTest(TestCase):
     def test_detail_returns_404_when_missing(self):
         response = self.client.get(reverse("projects:detail", args=["nope"]))
         self.assertEqual(response.status_code, 404)
+
+
+class InitialProjectsFixtureTest(TestCase):
+    fixtures = ["initial_projects.json"]
+
+    def test_loads_six_projects(self):
+        self.assertEqual(Project.objects.count(), 6)
+
+    def test_required_six_titles_present(self):
+        titles = set(Project.objects.values_list("title", flat=True))
+        required = {
+            "Chatbot",
+            "n8n Agent Workflow",
+            "LangChain Agent",
+            "Google AI Studio Media",
+            "Machine Learning (scikit-learn)",
+            "Campus SkillSwap",
+        }
+        self.assertEqual(titles, required)
