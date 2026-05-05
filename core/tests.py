@@ -44,3 +44,31 @@ class CoreUrlTest(TestCase):
 
     def test_contact_url_resolves(self):
         self.assertEqual(reverse("core:contact"), "/contact/")
+
+
+from projects.models import Project
+
+
+class HomeViewTest(TestCase):
+    def test_home_returns_200(self):
+        response = self.client.get(reverse("core:home"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_home_uses_correct_template(self):
+        response = self.client.get(reverse("core:home"))
+        self.assertTemplateUsed(response, "core/home.html")
+
+    def test_home_includes_featured_projects(self):
+        Project.objects.create(
+            title="A", slug="a", summary="s", business_problem=".",
+            tools_used=".", key_features=".", role_contribution=".",
+            biggest_challenge=".", what_learned=".", is_featured=True,
+        )
+        Project.objects.create(
+            title="B", slug="b", summary="s", business_problem=".",
+            tools_used=".", key_features=".", role_contribution=".",
+            biggest_challenge=".", what_learned=".", is_featured=False,
+        )
+        response = self.client.get(reverse("core:home"))
+        featured = list(response.context["featured_projects"])
+        self.assertEqual([p.title for p in featured], ["A"])

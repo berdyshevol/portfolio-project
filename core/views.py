@@ -1,13 +1,16 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from projects.models import Project
 
 
 def home(request):
-    return HttpResponse("home")
+    featured_projects = Project.objects.filter(is_featured=True)[:3]
+    return render(request, "core/home.html", {"featured_projects": featured_projects})
 
 
 def about(request):
-    return HttpResponse("about")
+    return render(request, "core/about.html")
 
 
 def contact(request):
-    return HttpResponse("contact")
+    return render(request, "core/contact.html")
