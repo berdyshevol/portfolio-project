@@ -101,7 +101,7 @@ class InitialProjectsFixtureTest(TestCase):
             "n8n Agent Workflow",
             "Handyman AI Assistant",
             "Google AI Studio Media",
-            "Machine Learning (scikit-learn)",
+            "Machine Learning Exercises (scikit-learn)",
             "Campus SkillSwap 1",
             "Campus SkillSwap 2",
         }
