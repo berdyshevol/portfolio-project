@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}About — Oleg Berdyshev{% endblock %}
+
+{% block content %}
+<section class="grid gap-10 md:grid-cols-[260px_1fr] md:items-start">
+  <img src="{% static 'img/oberdyshev.png' %}" alt="Oleg Berdyshev"
+       class="rounded-2xl border border-slate-200 dark:border-slate-800">
+  <div class="prose prose-slate max-w-none dark:prose-invert">
+    <h1>About</h1>
+    <p>
+      I'm a full-stack software engineer with 7 years of experience and a current MSIS candidate
+      at Baylor University. I've built scalable, revenue-generating features at a US-based PPM startup —
+      chart builders, notification systems, permission management — and led a transition to TypeScript
+      that cut bug frequency by 60%.
+    </p>
+    <p>
+      I care about clean architecture, mentoring, and shipping software people actually want to use.
+      I'm authorized to work in the U.S. under the Uniting for Ukraine program through July 2026,
+      and I'm enthusiastically seeking my next Software Engineer role.
+    </p>
+    <h2>Quick facts</h2>
+    <ul>
+      <li>Based in the Dallas Metropolitan Area</li>
+      <li>7 years engineering experience (React, TypeScript, Rails, Django, Python)</li>
+      <li>Mentored 3 junior engineers into mid-level roles</li>
+      <li>MSIS at Baylor University, expected July 2026</li>
+    </ul>
+  </div>
+</section>
+{% endblock %}

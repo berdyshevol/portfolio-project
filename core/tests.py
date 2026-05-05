@@ -72,3 +72,13 @@ class HomeViewTest(TestCase):
         response = self.client.get(reverse("core:home"))
         featured = list(response.context["featured_projects"])
         self.assertEqual([p.title for p in featured], ["A"])
+
+
+class AboutViewTest(TestCase):
+    def test_about_returns_200(self):
+        response = self.client.get(reverse("core:about"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_about_uses_correct_template(self):
+        response = self.client.get(reverse("core:about"))
+        self.assertTemplateUsed(response, "core/about.html")
